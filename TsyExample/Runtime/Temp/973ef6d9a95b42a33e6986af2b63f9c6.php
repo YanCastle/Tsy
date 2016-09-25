@@ -1,0 +1,3 @@
+<?php
+//000000000000a:8:{i:0;s:10:"UnitLinkID";i:1;s:7:"GoodsID";i:2;s:4:"Rate";i:3;s:6:"UnitID";i:4;s:8:"Standard";i:5;s:7:"IsBasic";s:3:"_pk";s:10:"UnitLinkID";s:5:"_type";a:6:{s:10:"UnitLinkID";s:16:"int(11) unsigned";s:7:"GoodsID";s:16:"int(11) unsigned";s:4:"Rate";s:21:"double(10,2) unsigned";s:6:"UnitID";s:16:"int(11) unsigned";s:8:"Standard";s:8:"char(50)";s:7:"IsBasic";s:13:"enum('1','0')";}}
+?>

@@ -1,0 +1,11 @@
+#Tsy框架开启微信平台配置说明
+
+在配置文件中添加如下几个配置信息：
+```php
+[
+    'WECHAT_APPID'=>'',
+    'WECHAT_TOKEN'=>'',
+    'WECHAT_CRYPT'=>'',//
+    'WECHAT_SECRET'=>'',//加密信息
+]
+```

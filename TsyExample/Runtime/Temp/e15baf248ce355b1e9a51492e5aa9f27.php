@@ -1,0 +1,3 @@
+<?php
+//000000000000a:11:{i:0;s:7:"GoodsID";i:1;s:4:"Name";i:2;s:5:"Model";i:3;s:7:"Disable";i:4;s:7:"Virtual";i:5;s:7:"BarCode";i:6;s:6:"PinYin";i:7;s:4:"Memo";i:8;s:13:"ProducerDicID";s:3:"_pk";s:7:"GoodsID";s:5:"_type";a:9:{s:7:"GoodsID";s:16:"int(11) unsigned";s:4:"Name";s:9:"char(250)";s:5:"Model";s:8:"char(50)";s:7:"Disable";s:13:"enum('1','0')";s:7:"Virtual";s:13:"enum('1','0')";s:7:"BarCode";s:8:"char(50)";s:6:"PinYin";s:9:"char(250)";s:4:"Memo";s:9:"char(250)";s:13:"ProducerDicID";s:16:"int(11) unsigned";}}
+?>

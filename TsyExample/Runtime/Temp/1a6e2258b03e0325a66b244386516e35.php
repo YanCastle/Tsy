@@ -1,0 +1,3 @@
+<?php
+//000000000000a:16:{i:0;s:15:"PrinterClientID";i:1;s:2:"SN";i:2;s:6:"LastIP";i:3;s:5:"CPUID";i:4;s:7:"LocalIP";i:5;s:3:"Mac";i:6;s:4:"Disk";i:7;s:13:"LoginUserName";i:8;s:12:"ComputerName";i:9;s:6:"System";i:10;s:11:"TotalMemory";i:11;s:7:"RegTime";i:12;s:5:"RegIP";i:13;s:2:"FD";s:3:"_pk";s:15:"PrinterClientID";s:5:"_type";a:14:{s:15:"PrinterClientID";s:16:"int(11) unsigned";s:2:"SN";s:8:"char(50)";s:6:"LastIP";s:7:"int(10)";s:5:"CPUID";s:8:"char(50)";s:7:"LocalIP";s:7:"int(10)";s:3:"Mac";s:8:"char(20)";s:4:"Disk";s:8:"char(50)";s:13:"LoginUserName";s:8:"char(50)";s:12:"ComputerName";s:9:"char(255)";s:6:"System";s:8:"char(50)";s:11:"TotalMemory";s:8:"char(50)";s:7:"RegTime";s:7:"int(10)";s:5:"RegIP";s:7:"int(10)";s:2:"FD";s:16:"int(11) unsigned";}}
+?>

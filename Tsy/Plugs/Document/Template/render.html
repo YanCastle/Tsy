@@ -1,0 +1,110 @@
+# 碳素云开发文档
+
+**目录**
+
+[TOCM]
+
+[TOC]
+# 数据库设计稿
+<if condition="$PDM">
+项目名称：{$PDM.Project.Name}
+项目介绍：
+
+> {$PDM.Project.Comment}
+
+字段定义字典：{$line}{$line}
+|名称 | 类型 | 备注|
+|---|---|---|
+<foreach name="PDM['Domains']" item="domain">
+|{$domain.Name} | {$domain.DataType} | {$domain.Comment}|{$line}
+</foreach>
+<foreach name="PDM['Tables']" item="table">
+{$line}
+## {$table.Name} ({$table.Code})
+> {$table.Comment}
+{$line}{$line}
+表字段：{$line}{$line}
+|名称 | 代码 | 数据类型 | 逻辑代码 | 默认值 | 备注|
+|---|---|---|---|---|---|
+<foreach name="table['Columns']" item="column">
+|{$column.Name} | {$column.Code} | {$column.DataType} | <?php if($column['I'])echo 'I';if($column['M'])echo 'M';if($column['i'])echo 'P'; ?> | {$column.DefaultValue} | {$column.Comment}|{$line}
+</foreach>
+{$line}
+</foreach>
+</if>
+{$line}{$line}
+# 对象列表
+<foreach name="Objects" item="Object">
+## {$Object.ObjectName}({$Object.ObjectSetting.main}){$line}
+主键：{$Object.ObjectSetting.pk}{$line}
+对象结构：{$line}
+```JSON
+{$Object.ObjectJSON}{$line}
+```
+{$line}
+对象字段说明：{$line}{$line}
+|名称 | 代码 | 数据类型 | 逻辑代码 | 默认值 | 备注|
+|---|---|---|---|---|---|
+<foreach name="Object['ObjectColumns']" item="OC">
+|{$OC.Name} | {$key} | {$OC.DataType} | <?php if($OC['I'])echo 'I';if($OC['M'])echo 'M';if($OC['i'])echo 'P'; ?> | {$OC.DefaultValue} | {$OC.Comment}|{$line}
+</foreach>
+</foreach>
+{$line}{$line}
+# 函数列表
+<foreach name="Functions" item="func">
+##{$func.zh}({$func.name})
+作者:{$func['author']}  链接:{$func['link']}
+>{$func.memo}<php>echo "\r\n";</php>
+参数列表：{$line}{$line}
+<if condition="$func['params']">
+| 参数名称 |参数代码   | 数据类型 | 必填 | 默认值 | 说明 |
+| --------   | :-----:  | :----:  | :----:  | :----:  | :----:  |
+<foreach name="func['params']" item="param">
+| {$param['zh']} |{$param['name']}   | {$param['type']} | {$param['must']} | {$param['default']} | {$param['memo']} |{$line}
+</foreach>
+</if>
+
+返回值：
+{$func['return']}
+</foreach>
+
+# 类列表
+<foreach name="Classes" item="cla">
+## {$cla['zh']} ({$cla['name']})
+作者:{$cla['author']}  链接:{$cla['link']}
+
+>{$cla['memo']}{$line}{$line}
+
+###属性
+<if condition="$cla['properties']">
+<foreach name="cla['properties']" item="property">
+#### [{$property['access']}]{$property['zh']}({$property['name']})
+</foreach>
+</if>
+### 方法
+<if condition="$cla['methods']">
+
+<foreach name="cla['methods']" item="method">
+<?php if($method['access']=='public'&&substr($method['name'],0,1)!='_'){ ?>
+#### [{$method.access}] {$method.zh} ({$method.name})
+请求地址：<?php echo str_replace(["\\\\","\\"],['/','/'],str_replace(['Controller','Object'],'',$cla['name'])),'/',$method['name'],"\r\n"; ?>
+作者:{$method['author']}  链接:{$method['link']}
+
+参数列表：{$line}{$line}
+<if condition="$method['params']">
+| 参数名称 |参数代码   | 数据类型 | 必填 | 默认值 | 说明 |
+| --------   | :-----:  | :----: | :----:  | :----:  | :----:  |
+<foreach name="method['params']" item="param">
+| {$param['zh']} |{$param['name']}   | {$param['type']} | <if condition="$param['must']">是<else/>否</if> | {$param['default']} | {$param['memo']} |{$line}
+</foreach>
+</if>
+{$line}
+返回值：
+{$method['return']}
+{$line}{$line}
+<?php }?>
+</foreach>
+
+</if>
+</foreach>
+{$line}
